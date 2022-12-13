@@ -5,15 +5,22 @@
 .dizi-section-title {
   color: #fff;
   font-size: 30px;
+  margin-bottom: 30px;
   font-weight: bold;
 }
-#dizi-section {
+
+.carousel-div {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 30px;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
-#dizi-section .dizi-section-item img {
+.dizi-carousel img {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
 }

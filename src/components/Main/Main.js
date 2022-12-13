@@ -33,8 +33,9 @@ const Main = () => {
             <a href="">Çocuk</a>
           </div>
         </nav>
-        <DiziSection id="dizi-section" />
       </div>
+      <DiziSection id="dizi-section" />
+
       <div className="video">
         <video
           playsInline
