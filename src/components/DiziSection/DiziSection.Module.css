@@ -1,0 +1,19 @@
+.main-section {
+  margin-top: 950px;
+  margin-bottom: 100px;
+}
+.dizi-section-title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+#dizi-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+#dizi-section .dizi-section-item img {
+  width: 250px;
+  height: 250px;
+}
