@@ -71,7 +71,11 @@ const DiziDetail = () => {
 
         {detail && (
           <>
-            <div className="dizi-detail">
+            <div
+              className={`dizi-detail ${
+                video && (video.results.length === 0 ? "none-video" : "")
+              }`}
+            >
               <div className="dizi-detail-left">
                 <img
                   src={IMG_API + detail.backdrop_path}
