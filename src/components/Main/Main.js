@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import DiziSection from "../DiziSection/DiziSection";
+import FilmSection from "../FilmSection/FilmSection";
 
 import "./Main.Module.css";
 const Main = () => {
@@ -22,20 +23,22 @@ const Main = () => {
       <div className="container">
         <nav>
           <div className="nav-item">
-            <a href="">Giriş</a>
-            <a href="">Çıkış</a>
-            <a href="">Profil</a>
+            <a href="#login">Giriş</a>
+            <a href="#logout">Çıkış</a>
+            <a href="#profil">Profil</a>
           </div>
           <div className="nav-logo">PysonFlix</div>
           <div className="nav-item">
             <a href="#dizi-section">Diziler</a>
-            <a href="">Filmler</a>
-            <a href="">Çocuk</a>
+            <a href="#film-section">Filmler</a>
+            <a href="#cocuk">Çocuk</a>
           </div>
         </nav>
       </div>
-      <DiziSection id="dizi-section" />
-
+      <div className="main-section">
+        <DiziSection />
+        <FilmSection />
+      </div>
       <div className="video">
         <video
           playsInline

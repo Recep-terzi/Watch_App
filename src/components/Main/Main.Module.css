@@ -44,3 +44,9 @@ nav .nav-item a {
   text-decoration: none;
   color: #fff;
 }
+/* Main */
+
+.main-section {
+  margin-top: 950px;
+  margin-bottom: 100px;
+}

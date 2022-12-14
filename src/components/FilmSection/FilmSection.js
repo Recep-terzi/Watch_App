@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import "./DiziSection.Module.css";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
-const DiziSection = () => {
+import React, { useEffect, useState } from "react";
+import Carousel from "react-multi-carousel";
+import "./FilmSection.Module.css";
+const FilmSection = () => {
   const [data, setData] = useState();
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/tv/popular?api_key=466279f06d7f82ea9024d440431f8663&language=e&page=tr-TR"
+        "https://api.themoviedb.org/3/movie/popular?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&page=1"
       )
       .then((data) => setData(data.data));
   }, []);
+
   console.log(data);
   return (
     <>
-      <div className="dizi-section" id="dizi-section">
+      <div className="film-section" id="film-section">
         <div className="container">
-          <div className="dizi-section-title">Diziler</div>
+          <div className="film-section-title">Filmler</div>
         </div>
-        {data && (
-          <>
-            <div className="carousel-div">
+        <div className="film-carousel-div">
+          {data && (
+            <>
               <Carousel
                 additionalTransfrom={0}
                 arrows
@@ -77,18 +77,18 @@ const DiziSection = () => {
                 slidesToSlide={1}
                 swipeable
               >
-                {data.results.map((dizi) => (
+                {data.results.map((movie) => (
                   <>
-                    <img src={IMG_API + dizi.poster_path} alt="" />
+                    <img src={IMG_API + movie.poster_path} alt="" />
                   </>
                 ))}
               </Carousel>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
       </div>
     </>
   );
 };
 
-export default DiziSection;
+export default FilmSection;
