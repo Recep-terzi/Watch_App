@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DiziSection from "../DiziSection/DiziSection";
 import FilmSection from "../FilmSection/FilmSection";
+import Loading from "../Loading/Loading";
 import Navbar from "../Navbar/Navbar";
 
 import "./Main.Module.css";
 const Main = () => {
+  const [loading, setLoading] = useState(true);
+
   const videoEl = useRef(null);
 
   const attemptPlay = () => {
@@ -14,20 +17,31 @@ const Main = () => {
         console.error("Error attempting to play", error);
       });
   };
-
   useEffect(() => {
-    attemptPlay();
+    setTimeout(() => {
+      setLoading(false);
+      attemptPlay();
+    }, 2000);
   }, []);
 
   return (
     <>
-      <div className="container">
-        <Navbar />
-      </div>
-      <div className="main-section">
-        <DiziSection />
-        <FilmSection />
-      </div>
+      {loading && (
+        <>
+          <Loading />
+        </>
+      )}
+      {!loading && (
+        <>
+          <div className="container">
+            <Navbar />
+          </div>
+          <div className="main-section">
+            <DiziSection />
+            <FilmSection />
+          </div>
+        </>
+      )}
       <div className="video">
         <video
           playsInline

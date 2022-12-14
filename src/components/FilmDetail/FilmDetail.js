@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import Iframe from "react-iframe";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import "./FilmDetail.Module.css";
 import imdb_image from "../../assets/imdb.png";
@@ -39,8 +39,7 @@ const FilmDetail = () => {
       )
       .then((data) => setVideo(data.data));
   }, [id]);
-  console.log(detail);
-  console.log(video);
+
   return (
     <>
       <div className="container film-container">
@@ -112,10 +111,10 @@ const FilmDetail = () => {
                     <div className="film-genres">
                       <p>Tür : </p>
                       <ul>
-                        {detail.genres.map((gen) => (
-                          <>
+                        {detail.genres.map((gen, index) => (
+                          <div key={index}>
                             <li>{gen.name}</li>
-                          </>
+                          </div>
                         ))}
                       </ul>
                     </div>
