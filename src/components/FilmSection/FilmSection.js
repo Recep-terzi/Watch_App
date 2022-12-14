@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
+import { Link } from "react-router-dom";
 import "./FilmSection.Module.css";
 const FilmSection = () => {
   const [data, setData] = useState();
@@ -79,7 +80,9 @@ const FilmSection = () => {
               >
                 {data.results.map((movie) => (
                   <>
-                    <img src={IMG_API + movie.poster_path} alt="" />
+                    <Link to={`/filmDetail/${movie.id}`}>
+                      <img src={IMG_API + movie.poster_path} alt="" />
+                    </Link>
                   </>
                 ))}
               </Carousel>
