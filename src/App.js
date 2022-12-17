@@ -13,7 +13,6 @@ function App() {
         <Route path="/diziDetail/:id" element={<DiziDetail />}></Route>
         <Route path="/detail/:id" element={<FilmDetail />}></Route>
       </Routes>
-      <Footer />
     </>
   );
 }

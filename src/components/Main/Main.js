@@ -47,6 +47,7 @@ const Main = () => {
             <HorrorSection />
             <TurkishDiziSection />
           </div>
+          <Footer />
         </>
       )}
       <div className="video">
