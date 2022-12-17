@@ -1,0 +1,97 @@
+/* Footer */
+.footer {
+  color: #fff;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  padding: 60px;
+}
+.footer-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-detail {
+  flex: 3;
+}
+.footer-link-menu {
+  flex: 1;
+}
+.footer-social-media {
+  flex: 1;
+}
+
+/* Footer Detail */
+.footer-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-detail .footer-logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+.footer-detail .footer-description {
+  font-size: 20px;
+}
+
+/* Footer link menu */
+
+.footer-link-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.footer-link-menu ul li {
+  font-size: 20px;
+}
+.footer-link-menu ul li:hover {
+  color: red;
+  transition: 0.4s ease-in-out;
+}
+
+/* Footer Social Media */
+
+.footer-social-media {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-social-media .instgram,
+.footer-social-media .linkedin {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer-social-media .instgram:hover,
+.footer-social-media .linkedin:hover {
+  color: red;
+  transition: 0.4s ease-in-out;
+}
+.footer-social-media .instgram svg,
+.footer-social-media .linkedin svg {
+  font-size: 30px;
+}
+
+/* Absolute icon */
+.absolute-icon {
+  z-index: -1;
+  position: absolute;
+  margin-top: 30px;
+  left: 30px;
+}
+.absolute-icon svg {
+  color: #fff;
+  font-size: 100px;
+}
+
+.absolute-icon2 {
+  position: absolute;
+  right: 70px;
+  margin-top: 70px;
+}
+.absolute-icon2 svg {
+  color: #fff;
+  font-size: 100px;
+}

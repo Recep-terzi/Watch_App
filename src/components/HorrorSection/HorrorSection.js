@@ -2,26 +2,25 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
-import "./FilmSection.Module.css";
-const FilmSection = () => {
+import "./HorrorSection.Module.css";
+const HorrorSection = () => {
   const [data, setData] = useState();
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&page=1"
+        "https://api.themoviedb.org/3/list/5987?api_key=466279f06d7f82ea9024d440431f8663&language=en-US"
       )
       .then((data) => setData(data.data));
   }, []);
-
   console.log(data);
   return (
     <>
-      <div className="film-section" id="film-section">
+      <div className="kid-section" id="kid-section">
         <div className="container">
-          <div className="film-section-title">Filmler</div>
+          <div className="kid-section-title">Korku Filmleri</div>
         </div>
-        <div className="film-carousel-div">
+        <div className="kid-carousel-div">
           {data && (
             <>
               <Carousel
@@ -78,7 +77,7 @@ const FilmSection = () => {
                 slidesToSlide={1}
                 swipeable
               >
-                {data.results.map((movie) => (
+                {data.items.map((movie) => (
                   <>
                     <Link to={`/detail/${movie.id}`}>
                       <img src={IMG_API + movie.poster_path} alt="" />
@@ -94,4 +93,4 @@ const FilmSection = () => {
   );
 };
 
-export default FilmSection;
+export default HorrorSection;

@@ -2,7 +2,7 @@
   margin-top: 70px;
   margin-bottom: 40px;
 }
-.film-detail {
+.dizi-detail {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,48 +11,48 @@
   padding: 30px;
   gap: 36px;
 }
-.film-detail .film-detail-left {
+.dizi-detail .dizi-detail-left {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-.film-detail .film-detail-left img {
+.dizi-detail .dizi-detail-left img {
   width: 100%;
 }
 /* right */
-.film-detail .film-detail-right {
+.dizi-detail .dizi-detail-right {
   flex: 2;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.film-detail .film-detail-right .film-detail-menu {
+.dizi-detail .dizi-detail-right .dizi-detail-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.film-detail .film-detail-right .film-detail-right-right {
+.dizi-detail .dizi-detail-right .dizi-detail-right-right {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.film-detail .film-detail-right .film-detail-right-left ul {
+.dizi-detail .dizi-detail-right .dizi-detail-right-left ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.film-detail .film-detail-right .film-detail-title {
+.dizi-detail .dizi-detail-right .dizi-detail-title {
   font-size: 32px;
   font-weight: bold;
 }
-.film-detail .film-detail-right .film-detail-description {
+.dizi-detail .dizi-detail-right .dizi-detail-description {
   line-height: 1.5;
 }
-.film-detail .film-detail-right .film-link a {
+.dizi-detail .dizi-detail-right .dizi-link a {
   margin-top: 10px;
 }
-.film-detail .film-detail-right .film-link p {
+.dizi-detail .dizi-detail-right .dizi-link p {
   position: relative;
   width: fit-content;
   width: 200px;
@@ -61,7 +61,7 @@
   margin-bottom: 10px;
   border-bottom: 3px solid #fff;
 }
-.film-detail .film-detail-right .film-link .network {
+.dizi-detail .dizi-detail-right .dizi-link .network {
   display: flex;
   align-items: center;
   gap: 12px;

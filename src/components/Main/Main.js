@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import DiziSection from "../DiziSection/DiziSection";
 import FilmSection from "../FilmSection/FilmSection";
+import Footer from "../Footer/Footer";
+import HorrorSection from "../HorrorSection/HorrorSection";
+import KidSection from "../KidSection/KidSection";
 import Loading from "../Loading/Loading";
 import Navbar from "../Navbar/Navbar";
+import TurkishDiziSection from "../TurkishDiziSection/TurkishDiziSection";
 
 import "./Main.Module.css";
 const Main = () => {
@@ -39,6 +43,9 @@ const Main = () => {
           <div className="main-section">
             <DiziSection />
             <FilmSection />
+            <KidSection />
+            <HorrorSection />
+            <TurkishDiziSection />
           </div>
         </>
       )}
