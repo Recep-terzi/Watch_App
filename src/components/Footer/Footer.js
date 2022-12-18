@@ -1,7 +1,8 @@
 import React from "react";
 import "./Footer.Module.css";
 import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
-import { GiFilmProjector, GiPopcorn } from "react-icons/gi";
+import { GiFilmProjector } from "react-icons/gi";
+import popcorn from "../../assets/popcorn.svg";
 const Footer = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const Footer = () => {
               <GiFilmProjector />
             </div>
             <div className="absolute-icon2">
-              <GiPopcorn />
+              <img src={popcorn} alt="popcorn" />
             </div>
             <div className="footer-detail">
               <div className="footer-logo">PysonFlix</div>

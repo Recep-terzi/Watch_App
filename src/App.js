@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import DiziDetail from "./components/DiziDetail/DiziDetail";
 import FilmDetail from "./components/FilmDetail/FilmDetail";
 import Footer from "./components/Footer/Footer";
+import Login from "./components/Login/Login";
 import Main from "./components/Main/Main";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Main />}></Route>
         <Route path="/diziDetail/:id" element={<DiziDetail />}></Route>
         <Route path="/detail/:id" element={<FilmDetail />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
     </>
   );

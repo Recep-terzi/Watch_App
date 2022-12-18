@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.login-container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  height: 700px;
+  margin: auto;
+  padding: 70px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.login-container .login-logo {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.login-container .login-title {
+  text-align: center;
+  font-size: 20px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.login-form .login-email {
+  margin: 20px 0 20px 0;
+}
+.login-form .login-email label,
+.login-form .login-password label {
+  font-size: 18px;
+}
+
+.login-form .login-email input,
+.login-form .login-password input {
+  width: 100%;
+  border: none;
+  position: relative;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 10px;
+  background-color: gray;
+  color: #fff;
+  padding: 10px;
+}
+.login-form .login-email input::placeholder,
+.login-form .login-password input::placeholder {
+  color: #fff;
+}
+.login-form .login-password svg {
+  position: absolute;
+  font-size: 40px;
+  color: #000;
+  right: 95px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.form-button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.login-form .login-button {
+  width: 70%;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 15px;
+}
+.login-form .login-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.form-button-group a {
+  width: 30%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  background-color: red;
+  color: #fff;
+  font-size: 15px;
+}
+.form-button-group a:hover {
+  background-color: rgb(184, 0, 0);
+  transition: 0.3s ease-in-out;
+}
+.login-info {
+  text-align: center;
+}
+.login-info a {
+  color: red;
+}

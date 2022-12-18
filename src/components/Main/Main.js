@@ -22,6 +22,8 @@ const Main = () => {
       });
   };
   useEffect(() => {
+    document.body.style.backgroundImage = "none";
+
     setTimeout(() => {
       setLoading(false);
       attemptPlay();

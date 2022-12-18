@@ -89,9 +89,10 @@
 .absolute-icon2 {
   position: absolute;
   right: 70px;
-  margin-top: 70px;
+  margin-top: 40px;
 }
-.absolute-icon2 svg {
+.absolute-icon2 img {
   color: #fff;
-  font-size: 100px;
+  width: 120px;
+  height: 120px;
 }
