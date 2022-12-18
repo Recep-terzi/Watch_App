@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.register-container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  height: 800px;
+  margin: auto;
+  padding: 70px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.register-container .register-logo {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.register-container .register-title {
+  text-align: center;
+  font-size: 20px;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.register-form .register-email {
+  margin: 20px 0 20px 0;
+}
+.register-form .register-password {
+  margin-bottom: 20px;
+}
+.register-form .register-email label,
+.register-form .register-password label,
+.register-form .register-username label,
+.register-form .re-register-password label {
+  font-size: 18px;
+}
+
+.register-form .register-email input,
+.register-form .register-password input,
+.register-form .register-username input,
+.register-form .re-register-password input {
+  width: 100%;
+  border: none;
+  position: relative;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 10px;
+  background-color: gray;
+  color: #fff;
+  padding: 10px;
+}
+.register-form .not-equal input {
+  border: 3px solid red;
+}
+.register-form .register-email input::placeholder,
+.register-form .register-password input::placeholder,
+.register-form .register-username input::placeholder,
+.register-form .re-register-password input::placeholder {
+  color: #fff;
+}
+.register-form .register-password svg,
+.register-form .re-register-password svg {
+  position: absolute;
+  font-size: 40px;
+  color: #000;
+  margin-left: -50px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.form-button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.register-form .register-button {
+  width: 70%;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 15px;
+}
+.register-form .register-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.form-button-group a {
+  width: 30%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  background-color: red;
+  color: #fff;
+  font-size: 15px;
+}
+.form-button-group a:hover {
+  background-color: rgb(184, 0, 0);
+  transition: 0.3s ease-in-out;
+}
+.register-info {
+  text-align: center;
+}
+.register-info a {
+  color: red;
+}
+.agreement {
+  display: flex;
+  padding: 0 10px 0 10px;
+  align-items: center;
+}
+.agreement input {
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.agreement label {
+  line-height: 1.3;
+}

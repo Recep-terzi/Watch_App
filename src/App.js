@@ -2,9 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import DiziDetail from "./components/DiziDetail/DiziDetail";
 import FilmDetail from "./components/FilmDetail/FilmDetail";
-import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Main from "./components/Main/Main";
+import Register from "./components/Register/Register";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route path="/diziDetail/:id" element={<DiziDetail />}></Route>
         <Route path="/detail/:id" element={<FilmDetail />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
     </>
   );
