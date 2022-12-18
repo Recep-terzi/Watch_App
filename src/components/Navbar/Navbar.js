@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav>
         <div className="nav-item">
           <Link to="/login">Giriş</Link>
-          <a href="#logout">Çıkış</a>
+          <Link to="/register">Kayıt ol</Link>
           <a href="#profil">Profil</a>
         </div>
         <div className="nav-logo">
