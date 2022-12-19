@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import Iframe from "react-iframe";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import "./FilmDetail.Module.css";
 import imdb_image from "../../assets/imdb.png";
@@ -59,17 +59,21 @@ const CommentDetail = () => {
       )
       .then((data) => setReviews(data.data));
   }, [id]);
+
   return (
     <>
       {reviews && (
         <div className="reviews-detail">
           {reviews.results.map((review) => (
-            <>
-              <div className="review-left">{review.author}</div>
+            <div className="reviews-detail-body">
+              <div className="review-left">
+                <img src={IMG_API + review.author_details.avatar_path} alt="" />
+              </div>
               <div className="review-right">
                 <div className="review-content">{review.content}</div>
+                <div className="create-review">{review.created_at}</div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       )}

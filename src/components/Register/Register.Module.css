@@ -193,7 +193,29 @@
   margin-top: 10px;
 }
 
-/* Comment Detail */
+/* Reviews Detail */
 .reviews-detail {
   color: #fff;
+}
+.reviews-detail-body {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  box-shadow: 0 5px 10px 10px rgb(255 255 255 / 10%);
+  padding: 30px;
+}
+.reviews-detail-body .review-left {
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1;
+}
+.reviews-detail-body .review-left img {
+  width: 100px;
+}
+.reviews-detail-body .review-right {
+  flex: 11;
+}
+.reviews-detail-body .review-right .create-review {
+  margin-top: 20px;
 }
