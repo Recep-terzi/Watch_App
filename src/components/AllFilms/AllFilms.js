@@ -9,8 +9,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Fade } from "react-awesome-reveal";
 import { pageDown, pageUp } from "../../redux/watchSlice";
+import Loading from "../Loading/Loading";
 const AllFilms = () => {
   const [films, setFilms] = useState();
+  const [loading, setLoading] = useState(true);
   const pageUpButton = () => {
     dispatch(pageUp());
   };
@@ -28,59 +30,67 @@ const AllFilms = () => {
       )
       .then((data) => setFilms(data.data));
   }, [pageNumber]);
-
-  console.log(pageNumber);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
   return (
     <>
-      <div className="container">
-        <Navbar id="top" />
+      {loading && <Loading />}
+      {!loading && (
+        <>
+          <div className="container">
+            <Navbar id="top" />
 
-        <div className="films-body">
-          <div className="films-left">
-            <p>Kategoriler</p>
-            <ul>
-              <li>Macera</li>
-              <li>Romantik</li>
-              <li>Bilim - Kurgu</li>
-            </ul>
-          </div>
-          {films && (
-            <div className="films-right">
-              <Fade>
-                {films.results.map((film) => (
-                  <motion.div
-                    whileHover={{ scale: 1.2 }}
-                    className="films-card"
-                  >
-                    <Link
-                      to={`/detail/${film.id}`}
-                      className="films-card-image"
-                    >
-                      <img src={IMG_API + film.poster_path} alt="" />
-                    </Link>
-                  </motion.div>
-                ))}
-              </Fade>
+            <div className="films-body">
+              <div className="films-left">
+                <p>Kategoriler</p>
+                <ul>
+                  <li>Macera</li>
+                  <li>Romantik</li>
+                  <li>Bilim - Kurgu</li>
+                </ul>
+              </div>
+              {films && (
+                <div className="films-right">
+                  <Fade>
+                    {films.results.map((film) => (
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        className="films-card"
+                      >
+                        <Link
+                          to={`/detail/${film.id}`}
+                          className="films-card-image"
+                        >
+                          <img src={IMG_API + film.poster_path} alt="" />
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </Fade>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-        <div className="films-button">
-          <a href="#top">
-            <button onClick={pageUpButton}>
-              {pageNumber + 1}. sayfaya git
-            </button>
-          </a>
-          {pageNumber !== 1 && (
-            <a href="#top">
-              <button onClick={pageDownButton}>
-                {" "}
-                {pageNumber - 1}. sayfaya git
-              </button>
-            </a>
-          )}
-        </div>
-      </div>
-      <Footer />
+            <div className="films-button">
+              <a href="#top">
+                <button onClick={pageUpButton}>
+                  {pageNumber + 1}. sayfaya git
+                </button>
+              </a>
+              {pageNumber !== 1 && (
+                <a href="#top">
+                  <button onClick={pageDownButton}>
+                    {" "}
+                    {pageNumber - 1}. sayfaya git
+                  </button>
+                </a>
+              )}
+            </div>
+          </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 };
