@@ -13,6 +13,8 @@ import Loading from "../Loading/Loading";
 const AllFilms = () => {
   const [films, setFilms] = useState();
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState();
+  const [filteredDetail, setFilteredDetail] = useState("");
   const pageUpButton = () => {
     dispatch(pageUp());
   };
@@ -22,19 +24,26 @@ const AllFilms = () => {
   let pageNumber = useSelector((state) => state.watch.page);
   const dispatch = useDispatch();
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
-
+  const filteredFilms = (filteredDetail, films) => {
+    setFilteredDetail(filteredDetail);
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&page=${pageNumber}&with_genres=${filteredDetail}`;
+    axios.get(url).then((data) => setFilter(data.data));
+  };
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&page=${pageNumber}`
+        filter
+          ? `https://api.themoviedb.org/3/movie/popular?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&page=${pageNumber}&with_genres=${filteredDetail}`
+          : `https://api.themoviedb.org/3/movie/popular?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&page=${pageNumber}`
       )
       .then((data) => setFilms(data.data));
-  }, [pageNumber]);
+  }, [pageNumber, filter, filteredDetail]);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 1500);
   }, []);
+
   return (
     <>
       {loading && <Loading />}
@@ -47,11 +56,12 @@ const AllFilms = () => {
               <div className="films-left">
                 <p>Kategoriler</p>
                 <ul>
-                  <li>Macera</li>
-                  <li>Romantik</li>
-                  <li>Bilim - Kurgu</li>
+                  <li onClick={() => filteredFilms("12")}>Macera</li>
+                  <li onClick={() => filteredFilms("10749")}>Romantik</li>
+                  <li onClick={() => filteredFilms("878")}>Bilim - Kurgu</li>
                 </ul>
               </div>
+
               {films && (
                 <div className="films-right">
                   <Fade>
