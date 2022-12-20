@@ -126,7 +126,8 @@ const Register = () => {
             </div>
           </form>
           <div className="register-info">
-            Hesabınız yok mu? Kayıt olmak için <Link to="/">Tıklayınız</Link>
+            Hesabınız var mı? Giriş yapmak için{" "}
+            <Link to="/login">Tıklayınız</Link>
           </div>
         </div>
       )}

@@ -66,7 +66,8 @@ const Login = () => {
             </div>
           </form>
           <div className="login-info">
-            Hesabınız yok mu? Kayıt olmak için <Link to="/">Tıklayınız</Link>
+            Hesabınız yok mu? Kayıt olmak için{" "}
+            <Link to="/register">Tıklayınız</Link>
           </div>
         </div>
       )}
