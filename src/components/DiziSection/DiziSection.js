@@ -4,6 +4,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 const DiziSection = () => {
   const [data, setData] = useState();
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
@@ -19,7 +21,7 @@ const DiziSection = () => {
     <>
       <div className="dizi-section" id="dizi-section">
         <div className="container">
-          <div className="dizi-section-title">Diziler</div>
+          <div className="dizi-section-title">Popüler Diziler</div>
         </div>
         {data && (
           <>
@@ -79,11 +81,15 @@ const DiziSection = () => {
                 swipeable
               >
                 {data.results.map((dizi) => (
-                  <>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.2,
+                    }}
+                  >
                     <Link to={`/diziDetail/${dizi.id}`}>
                       <img src={IMG_API + dizi.poster_path} alt="" />
                     </Link>
-                  </>
+                  </motion.div>
                 ))}
               </Carousel>
             </div>

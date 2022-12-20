@@ -1,12 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
+import ComedySection from "../ComedySection/ComedySection";
+import CrimeSection from "../CrimeSection/CrimeSection";
 import DiziSection from "../DiziSection/DiziSection";
+import DramaSection from "../DramaSection/DramaSection";
+import FamilySection from "../FamilySection/FamilySection";
 import FilmSection from "../FilmSection/FilmSection";
 import Footer from "../Footer/Footer";
 import HorrorSection from "../HorrorSection/HorrorSection";
-import KidSection from "../KidSection/KidSection";
 import Loading from "../Loading/Loading";
 import Navbar from "../Navbar/Navbar";
+import RomanceSection from "../RomanceSection/RomanceSection";
+import ScienceSection from "../ScienceSection/ScienceSection";
 import TurkishDiziSection from "../TurkishDiziSection/TurkishDiziSection";
+import { Zoom } from "react-awesome-reveal";
 
 import "./Main.Module.css";
 const Main = () => {
@@ -43,11 +49,36 @@ const Main = () => {
             <Navbar />
           </div>
           <div className="main-section">
-            <DiziSection />
-            <FilmSection />
-            <KidSection />
-            <HorrorSection />
-            <TurkishDiziSection />
+            <Zoom cascade>
+              <DiziSection />
+            </Zoom>
+            <Zoom cascade>
+              <FilmSection />
+            </Zoom>
+            <Zoom cascade>
+              <HorrorSection />
+            </Zoom>
+            <Zoom cascade>
+              <ComedySection />
+            </Zoom>
+            <Zoom cascade>
+              <CrimeSection />
+            </Zoom>
+            <Zoom cascade>
+              <DramaSection />
+            </Zoom>
+            <Zoom cascade>
+              <FamilySection />
+            </Zoom>
+            <Zoom cascade>
+              <RomanceSection />
+            </Zoom>
+            <Zoom cascade>
+              <ScienceSection />
+            </Zoom>
+            <Zoom cascade>
+              <TurkishDiziSection />
+            </Zoom>
           </div>
           <Footer />
         </>

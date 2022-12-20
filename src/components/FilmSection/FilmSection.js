@@ -1,8 +1,10 @@
 import axios from "axios";
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 import "./FilmSection.Module.css";
+
 const FilmSection = () => {
   const [data, setData] = useState();
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
@@ -19,7 +21,7 @@ const FilmSection = () => {
     <>
       <div className="film-section" id="film-section">
         <div className="container">
-          <div className="film-section-title">Filmler</div>
+          <div className="film-section-title">Populer Filmler</div>
         </div>
         <div className="film-carousel-div">
           {data && (
@@ -79,11 +81,15 @@ const FilmSection = () => {
                 swipeable
               >
                 {data.results.map((movie) => (
-                  <>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.2,
+                    }}
+                  >
                     <Link to={`/detail/${movie.id}`}>
                       <img src={IMG_API + movie.poster_path} alt="" />
                     </Link>
-                  </>
+                  </motion.div>
                 ))}
               </Carousel>
             </>

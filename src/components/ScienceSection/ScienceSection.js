@@ -1,24 +1,23 @@
 import axios from "axios";
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
-
-const TurkishDiziSection = () => {
+import { motion } from "framer-motion";
+const ScienceSection = () => {
   const [data, setData] = useState();
+
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   useEffect(() => {
     axios
       .get(
-        "    https://api.themoviedb.org/3/list/9941?api_key=466279f06d7f82ea9024d440431f8663&language=en-US"
+        "https://api.themoviedb.org/3/discover/movie?api_key=466279f06d7f82ea9024d440431f8663&with_genres=878"
       )
       .then((data) => setData(data.data));
   }, []);
-  console.log(data);
   return (
     <div className="film-section" id="film-section">
       <div className="container">
-        <div className="film-section-title">Türkçe Diziler</div>
+        <div className="film-section-title">Bilim-Kurgu Filmleri</div>
       </div>
       <div className="film-carousel-div">
         {data && (
@@ -77,13 +76,13 @@ const TurkishDiziSection = () => {
               slidesToSlide={1}
               swipeable
             >
-              {data.items.map((movie) => (
+              {data.results.map((movie) => (
                 <motion.div
                   whileHover={{
                     scale: 1.2,
                   }}
                 >
-                  <Link to={`/diziDetail/${movie.id}`}>
+                  <Link to={`/detail/${movie.id}`}>
                     <img src={IMG_API + movie.poster_path} alt="" />
                   </Link>
                 </motion.div>
@@ -96,4 +95,4 @@ const TurkishDiziSection = () => {
   );
 };
 
-export default TurkishDiziSection;
+export default ScienceSection;

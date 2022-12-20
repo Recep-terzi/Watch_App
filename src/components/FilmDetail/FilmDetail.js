@@ -130,7 +130,6 @@ const FilmDetail = () => {
                       ? `https://www.youtube.com/embed/${video.results[0].key}?autoplay=true`
                       : null
                   }
-                  //   url="https://www.youtube.com/embed/Q73UhUTs6y0?autoplay=true"
                   frameBorder={0}
                   width="100%"
                   height="500px"
