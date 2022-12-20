@@ -15,7 +15,7 @@ const Navbar = () => {
         </div>
         <div className="nav-item">
           <a href="#dizi-section">Diziler</a>
-          <a href="#film-section">Filmler</a>
+          <Link to="/allfilms">Filmler</Link>
           <a href="#cocuk">Çocuk</a>
         </div>
       </nav>
