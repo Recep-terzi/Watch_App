@@ -32,3 +32,9 @@ video {
   margin-top: 950px;
   margin-bottom: 100px;
 }
+
+@media screen and (max-width: 768px) {
+  .video {
+    display: none;
+  }
+}
