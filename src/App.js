@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AllFilms from "./components/AllFilms/AllFilms";
+import AllTV from "./components/AllTV/AllTV";
 import DiziDetail from "./components/DiziDetail/DiziDetail";
 import FilmDetail from "./components/FilmDetail/FilmDetail";
 import Login from "./components/Login/Login";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/allfilms" element={<AllFilms />}></Route>
+        <Route path="/alltv" element={<AllTV />}></Route>
       </Routes>
     </>
   );

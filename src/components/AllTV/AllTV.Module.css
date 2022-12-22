@@ -1,30 +1,30 @@
-.films-body {
+.tv-body {
   color: #fff;
   display: flex;
   margin-top: 70px;
 }
-.films-body .films-left {
+.tv-body .tv-left {
   flex: 1;
 }
-.films-body .films-left p {
+.tv-body .tv-left p {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 30px;
 }
-.films-body .films-left ul {
+.tv-body .tv-left ul {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 10px;
 }
-.films-body .films-left ul li {
+.tv-body .tv-left ul li {
   font-size: 20px;
   display: flex;
   align-items: center;
   gap: 20px;
   cursor: pointer;
 }
-.films-body .films-left .search-ul li input {
+.tv-body .tv-left .search-ul li input {
   width: 100%;
   border: none;
   padding: 10px;
@@ -32,16 +32,16 @@
   margin-bottom: 30px;
   margin-right: 20px;
 }
-.films-body .films-left .search-ul li input::placeholder {
+.tv-body .tv-left .search-ul li input::placeholder {
   font-weight: bold;
 }
-.films-body .films-right {
-  flex: 3;
+.tv-body .tv-right {
+  flex: 4;
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 40px;
 }
-.films-body .films-right .films-card .films-card-image img {
+.tv-body .tv-right .tv-card .tv-card-image img {
   width: 250.59px;
   height: 350.05px;
   border-radius: 10px;
@@ -49,14 +49,14 @@
 .null-image {
   height: 500px;
 }
-.films-button {
+.tv-button {
   text-align: center;
   display: flex;
   gap: 30px;
   align-items: center;
   justify-content: center;
 }
-.films-button button {
+.tv-button button {
   padding: 10px 150px 10px 150px;
   border: none;
   border-radius: 10px;
@@ -67,7 +67,7 @@
 
   cursor: pointer;
 }
-.films-button button:hover {
+.tv-button button:hover {
   background-color: red;
   color: #fff;
   transition: 0.3s ease-in-out;

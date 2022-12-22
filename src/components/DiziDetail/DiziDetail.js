@@ -38,7 +38,7 @@ const DiziDetail = () => {
       )
       .then((data) => setVideo(data.data));
   }, [id]);
-  console.log(detail);
+  console.log(video);
   return (
     <>
       <div className="container dizi-container">
@@ -52,7 +52,9 @@ const DiziDetail = () => {
                 <Iframe
                   url={
                     video
-                      ? `https://www.youtube.com/embed/${video.results[3].key}?autoplay=true`
+                      ? video.results[3] === undefined
+                        ? `https://www.youtube.com/embed/${video.results[0].key}?autoplay=true`
+                        : `https://www.youtube.com/embed/${video.results[3].key}?autoplay=true`
                       : null
                   }
                   //   url="https://www.youtube.com/embed/Q73UhUTs6y0?autoplay=true"
@@ -78,7 +80,12 @@ const DiziDetail = () => {
             >
               <div className="dizi-detail-left">
                 <img
-                  src={IMG_API + detail.backdrop_path}
+                  src={
+                    detail.backdrop_path === null
+                      ? IMG_API + detail.poster_path
+                      : IMG_API + detail.backdrop_path
+                  }
+                  className={detail.backdrop_path === null ? "null-image" : ""}
                   alt="Dizi'nin görseli."
                 />
               </div>
