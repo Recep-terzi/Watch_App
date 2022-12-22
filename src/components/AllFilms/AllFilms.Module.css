@@ -14,11 +14,26 @@
 .films-body .films-left ul {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   padding: 10px;
 }
 .films-body .films-left ul li {
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.films-body .films-left .search-ul li input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 9999px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+.films-body .films-left .search-ul li input::placeholder {
+  font-weight: bold;
 }
 .films-body .films-right {
   flex: 4;
@@ -27,7 +42,8 @@
   gap: 40px;
 }
 .films-body .films-right .films-card .films-card-image img {
-  width: 100%;
+  width: 250.59px;
+  height: 350.05px;
   border-radius: 10px;
 }
 .films-button {

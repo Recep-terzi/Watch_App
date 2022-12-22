@@ -10,11 +10,13 @@ import { motion } from "framer-motion";
 import { Fade } from "react-awesome-reveal";
 import { pageDown, pageUp } from "../../redux/watchSlice";
 import Loading from "../Loading/Loading";
+import { AiOutlineArrowRight } from "react-icons/ai";
 const AllFilms = () => {
   const [films, setFilms] = useState();
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState();
   const [filteredDetail, setFilteredDetail] = useState("");
+  const [search, setSearch] = useState("");
   const pageUpButton = () => {
     dispatch(pageUp());
   };
@@ -43,7 +45,13 @@ const AllFilms = () => {
       setLoading(false);
     }, 1500);
   }, []);
-
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/movie?api_key=466279f06d7f82ea9024d440431f8663&language=en-US&query=${search}&page=1&include_adult=false`
+      )
+      .then((data) => setFilms(data.data));
+  }, [search]);
   return (
     <>
       {loading && <Loading />}
@@ -55,13 +63,59 @@ const AllFilms = () => {
             <div className="films-body">
               <div className="films-left">
                 <p>Kategoriler</p>
+                <ul className="search-ul">
+                  <li>
+                    <input
+                      type="text"
+                      placeholder="Aramak için"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
+                  </li>
+                </ul>
                 <ul>
-                  <li onClick={() => filteredFilms("12")}>Macera</li>
-                  <li onClick={() => filteredFilms("10749")}>Romantik</li>
-                  <li onClick={() => filteredFilms("878")}>Bilim - Kurgu</li>
+                  <li onClick={() => filteredFilms("12")}>
+                    <AiOutlineArrowRight />
+                    Macera
+                  </li>
+                  <li onClick={() => filteredFilms("10749")}>
+                    <AiOutlineArrowRight />
+                    Romantik
+                  </li>
+                  <li onClick={() => filteredFilms("878")}>
+                    <AiOutlineArrowRight />
+                    Bilim - Kurgu
+                  </li>
+                  <li onClick={() => filteredFilms("28")}>
+                    <AiOutlineArrowRight />
+                    Aksiyon
+                  </li>
+                  <li onClick={() => filteredFilms("16")}>
+                    <AiOutlineArrowRight />
+                    Animasyon
+                  </li>
+                  <li onClick={() => filteredFilms("35")}>
+                    <AiOutlineArrowRight />
+                    Komedi
+                  </li>
+                  <li onClick={() => filteredFilms("80")}>
+                    <AiOutlineArrowRight />
+                    Suç
+                  </li>
+                  <li onClick={() => filteredFilms("18")}>
+                    <AiOutlineArrowRight />
+                    Dram
+                  </li>
+                  <li onClick={() => filteredFilms("10751")}>
+                    <AiOutlineArrowRight />
+                    Aile - Çocuk
+                  </li>
+                  <li onClick={() => filteredFilms("27")}>
+                    <AiOutlineArrowRight />
+                    Korku
+                  </li>
                 </ul>
               </div>
-
               {films && (
                 <div className="films-right">
                   <Fade>
