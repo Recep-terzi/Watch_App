@@ -29,6 +29,8 @@ const Navbar = () => {
               <Link to="/" onClick={logoutUser}>
                 Çıkış Yap
               </Link>
+              <Link to="/mylist">Listem</Link>
+              <Link to="/"></Link>
             </>
           ) : (
             <>
@@ -36,7 +38,6 @@ const Navbar = () => {
               <Link to="/register">Kayıt ol</Link>
             </>
           )}
-          <a href="#profil">Profil</a>
         </div>
         <div className="nav-logo">
           <Link to="/">PysonFlix</Link>
@@ -47,7 +48,7 @@ const Navbar = () => {
         <div className="nav-item">
           <Link to="/alltv">Diziler</Link>
           <Link to="/allfilms">Filmler</Link>
-          <a href="#cocuk">Çocuk</a>
+          <Link to="/"></Link>
         </div>
       </nav>
     </>

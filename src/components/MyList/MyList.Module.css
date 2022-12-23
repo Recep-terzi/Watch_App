@@ -1,0 +1,11 @@
+.mylist {
+  margin-top: 50px;
+  padding: 30px;
+}
+.mylist > .mylist-title {
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 3px solid #fff;
+  width: 200px;
+  padding-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import AllFilms from "./components/AllFilms/AllFilms";
 import AllTV from "./components/AllTV/AllTV";
@@ -8,6 +8,7 @@ import DiziDetail from "./components/DiziDetail/DiziDetail";
 import FilmDetail from "./components/FilmDetail/FilmDetail";
 import Login from "./components/Login/Login";
 import Main from "./components/Main/Main";
+import MyList from "./components/MyList/MyList";
 import Register from "./components/Register/Register";
 import { auth } from "./firebase/config";
 import { login, logout } from "./redux/watchSlice";
@@ -39,6 +40,7 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/allfilms" element={<AllFilms />}></Route>
         <Route path="/alltv" element={<AllTV />}></Route>
+        <Route path="/mylist" element={<MyList />}></Route>
       </Routes>
     </>
   );

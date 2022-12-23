@@ -6,7 +6,7 @@ import loginImage from "../../assets/login.jpg";
 import Loading from "../Loading/Loading";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../redux/watchSlice";
 const Login = () => {
   const [email, setEmail] = useState();
