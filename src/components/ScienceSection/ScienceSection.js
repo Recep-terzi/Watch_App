@@ -76,8 +76,9 @@ const ScienceSection = () => {
               slidesToSlide={1}
               swipeable
             >
-              {data.results.map((movie) => (
+              {data.results.map((movie, index) => (
                 <motion.div
+                  key={index}
                   whileHover={{
                     scale: 1.2,
                   }}

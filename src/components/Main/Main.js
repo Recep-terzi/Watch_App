@@ -15,9 +15,11 @@ import TurkishDiziSection from "../TurkishDiziSection/TurkishDiziSection";
 import { Zoom } from "react-awesome-reveal";
 
 import "./Main.Module.css";
+import { useSelector } from "react-redux";
 const Main = () => {
   const [loading, setLoading] = useState(true);
-
+  const user = useSelector((state) => state.watch.user);
+  console.log(user);
   const videoEl = useRef(null);
 
   const attemptPlay = () => {

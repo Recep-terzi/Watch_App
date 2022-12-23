@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import register from "../../assets/register.jpg";
 import Loading from "../Loading/Loading";
 import "./Register.Module.css";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../../firebase/config";
+
 const Register = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -13,9 +16,23 @@ const Register = () => {
   const [hidden2, setHidden2] = useState(true);
   const [loading, setLoading] = useState(true);
   const [agreement, setAgreement] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("deneme");
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        updateProfile(res.user, {
+          displayName: username,
+        });
+        navigate("/");
+      })
+      .catch((err) => setError(err.message, error));
+
+    setEmail("");
+    setUsername("");
+    setPassword("");
+    setRePassword("");
   };
 
   const hiddenSetting = () => {
@@ -36,7 +53,6 @@ const Register = () => {
       setLoading(false);
     }, 2000);
   }, []);
-  console.log(agreement);
   return (
     <>
       {loading && <Loading />}

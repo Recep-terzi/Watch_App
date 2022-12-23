@@ -19,7 +19,6 @@ const CharacterDetail = () => {
       )
       .then((data) => setChacDetail(data.data));
   }, [id]);
-  console.log(chacDetail);
   return (
     <>
       {chacDetail && (
@@ -113,7 +112,6 @@ const FilmDetail = () => {
       )
       .then((data) => setVideo(data.data));
   }, [id]);
-  console.log(selected);
   return (
     <>
       <div className="container film-container">

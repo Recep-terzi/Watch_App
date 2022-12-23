@@ -14,7 +14,6 @@ const TurkishDiziSection = () => {
       )
       .then((data) => setData(data.data));
   }, []);
-  console.log(data);
   return (
     <div className="film-section" id="film-section">
       <div className="container">
@@ -77,8 +76,9 @@ const TurkishDiziSection = () => {
               slidesToSlide={1}
               swipeable
             >
-              {data.items.map((movie) => (
+              {data.items.map((movie, index) => (
                 <motion.div
+                  key={index}
                   whileHover={{
                     scale: 1.2,
                   }}

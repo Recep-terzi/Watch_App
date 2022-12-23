@@ -16,7 +16,6 @@ const DiziSection = () => {
       )
       .then((data) => setData(data.data));
   }, []);
-  console.log(data);
   return (
     <>
       <div className="dizi-section" id="dizi-section">
@@ -80,8 +79,9 @@ const DiziSection = () => {
                 slidesToSlide={1}
                 swipeable
               >
-                {data.results.map((dizi) => (
+                {data.results.map((dizi, index) => (
                   <motion.div
+                    key={index}
                     whileHover={{
                       scale: 1.2,
                     }}

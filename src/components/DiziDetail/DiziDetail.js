@@ -38,7 +38,6 @@ const DiziDetail = () => {
       )
       .then((data) => setVideo(data.data));
   }, [id]);
-  console.log(video);
   return (
     <>
       <div className="container dizi-container">

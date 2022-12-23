@@ -1,26 +1,44 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.Module.css";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import login from "../../assets/login.jpg";
+import loginImage from "../../assets/login.jpg";
 import Loading from "../Loading/Loading";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/config";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../redux/watchSlice";
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [hidden, setHidden] = useState(true);
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("deneme");
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+          })
+        );
+        navigate("/");
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
-
   const hiddenSetting = () => {
     setHidden(!hidden);
   };
 
   useEffect(() => {
     setTimeout(() => {
-      document.body.style.backgroundImage = `url(${login})`;
+      document.body.style.backgroundImage = `url(${loginImage})`;
       document.body.style.backgroundRepeat = "no-repeat";
       document.body.style.backgroundSize = "cover";
       document.body.style.height = "100vh";
