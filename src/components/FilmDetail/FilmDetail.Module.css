@@ -45,6 +45,57 @@
 .film-detail .film-detail-right .film-detail-title {
   font-size: 32px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.film-detail
+  .film-detail-right
+  .film-detail-title
+  .film-detail-title-right
+  svg {
+  font-size: 50px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.film-detail
+  .film-detail-right
+  .film-detail-title
+  .film-detail-title-right
+  svg:hover {
+  background-color: red;
+  transition: 0.3s ease;
+  border-color: #000;
+  cursor: pointer;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  font-size: 20px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: -40px;
+  left: -40px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 .film-detail .film-detail-right .film-detail-description {
   line-height: 1.5;

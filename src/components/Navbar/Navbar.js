@@ -26,7 +26,6 @@ const Navbar = () => {
         <div className="nav-item">
           {user ? (
             <>
-              <p className="welcomeUser"> Hoşgeldin, {user.displayName}</p>
               <Link to="/" onClick={logoutUser}>
                 Çıkış Yap
               </Link>
@@ -41,6 +40,9 @@ const Navbar = () => {
         </div>
         <div className="nav-logo">
           <Link to="/">PysonFlix</Link>
+          {user && (
+            <p className="welcomeUser"> Hoşgeldin, {user.displayName}</p>
+          )}
         </div>
         <div className="nav-item">
           <Link to="/alltv">Diziler</Link>

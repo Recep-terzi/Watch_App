@@ -6,8 +6,9 @@ import Navbar from "../Navbar/Navbar";
 import "./FilmDetail.Module.css";
 import imdb_image from "../../assets/imdb.png";
 import notImage from "../../assets/not-image.webp";
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
+import { TiTick } from "react-icons/ti";
 
+const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const CharacterDetail = () => {
   const { id } = useParams();
 
@@ -161,7 +162,15 @@ const FilmDetail = () => {
                 />
               </div>
               <div className="film-detail-right">
-                <div className="film-detail-title">{detail.original_title}</div>
+                <div className="film-detail-title">
+                  <div className="film-detail-title-left">
+                    {detail.original_title}
+                  </div>
+                  <div className="film-detail-title-right tooltip">
+                    <TiTick />
+                    <div className="tooltiptext">Liste'ye ekle</div>
+                  </div>
+                </div>
                 <div className="film-detail-description">{detail.overview}</div>
                 <div className="film-detail-menu">
                   <div className="film-detail-right-right">

@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Iframe from "react-iframe";
 import "./DiziDetail.Module.css";
+import { TiTick } from "react-icons/ti";
+
 const DiziDetail = () => {
   const { id } = useParams();
   const [detail, setDetail] = useState();
@@ -89,7 +91,13 @@ const DiziDetail = () => {
                 />
               </div>
               <div className="dizi-detail-right">
-                <div className="dizi-detail-title">{detail.name}</div>
+                <div className="dizi-detail-title">
+                  <div className="dizi-detail-title-left">{detail.name}</div>
+                  <div className="dizi-detail-title-right tooltip">
+                    <TiTick />
+                    <div className="tooltiptext">Liste'ye ekle</div>
+                  </div>
+                </div>
                 <div className="dizi-detail-description">{detail.overview}</div>
                 <div className="dizi-detail-menu">
                   <div className="dizi-detail-right-right">
