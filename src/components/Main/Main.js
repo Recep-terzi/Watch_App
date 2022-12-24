@@ -13,7 +13,11 @@ import RomanceSection from "../RomanceSection/RomanceSection";
 import ScienceSection from "../ScienceSection/ScienceSection";
 import TurkishDiziSection from "../TurkishDiziSection/TurkishDiziSection";
 import { Zoom } from "react-awesome-reveal";
-
+import video1 from "../../assets/main2.mp4";
+import video2 from "../../assets/main3.mp4";
+import video3 from "../../assets/main4.mp4";
+import video4 from "../../assets/main5.mp4";
+import video5 from "../../assets/main6.mp4";
 import "./Main.Module.css";
 import { useSelector } from "react-redux";
 const Main = () => {
@@ -22,12 +26,18 @@ const Main = () => {
   console.log(user);
   const videoEl = useRef(null);
 
+  const video = [video1, video2, video3, video3, video4, video5];
+
+  console.log(video[Math.floor(Math.random() * video.length)]);
+
   const attemptPlay = () => {
-    videoEl &&
-      videoEl.current &&
-      videoEl.current.play().catch((error) => {
-        console.error("Error attempting to play", error);
-      });
+    setTimeout(() => {
+      videoEl &&
+        videoEl.current &&
+        videoEl.current.play().catch((error) => {
+          console.error("Error attempting to play", error);
+        });
+    }, 500);
   };
   useEffect(() => {
     document.body.style.backgroundImage = "none";
@@ -91,7 +101,7 @@ const Main = () => {
           loop
           muted
           alt="All the devices"
-          src={require("../../assets/main.mp4")}
+          src={!loading && video[Math.floor(Math.random() * video.length)]}
           ref={videoEl}
         />
       </div>
