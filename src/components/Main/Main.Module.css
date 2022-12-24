@@ -15,7 +15,8 @@ body {
   margin-top: 20px;
 }
 /* Video */
-
+.video {
+}
 video {
   position: absolute;
   top: 0;
@@ -24,6 +25,7 @@ video {
   width: auto;
   margin-top: -173px;
   margin-left: -300px;
+  padding-bottom: 170px;
 }
 
 /* Main */
