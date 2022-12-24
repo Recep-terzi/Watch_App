@@ -18,6 +18,8 @@ import video2 from "../../assets/main3.mp4";
 import video3 from "../../assets/main4.mp4";
 import video4 from "../../assets/main5.mp4";
 import video5 from "../../assets/main6.mp4";
+import video6 from "../../assets/main6.mp4";
+import video7 from "../../assets/main7.mp4";
 import "./Main.Module.css";
 import { useSelector } from "react-redux";
 const Main = () => {
@@ -26,9 +28,16 @@ const Main = () => {
   console.log(user);
   const videoEl = useRef(null);
 
-  const video = [video1, video2, video3, video3, video4, video5];
-
-  console.log(video[Math.floor(Math.random() * video.length)]);
+  const video = [
+    video1,
+    video2,
+    video3,
+    video3,
+    video4,
+    video5,
+    video6,
+    video7,
+  ];
 
   const attemptPlay = () => {
     setTimeout(() => {
