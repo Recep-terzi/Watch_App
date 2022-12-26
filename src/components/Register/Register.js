@@ -136,7 +136,7 @@ const Register = () => {
                 type="submit"
                 disabled={!agreement}
               >
-                Giriş Yap
+                Kayıt ol
               </button>
               <Link to="/">İptal</Link>
             </div>

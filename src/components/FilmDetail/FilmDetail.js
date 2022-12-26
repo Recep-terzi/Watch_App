@@ -7,6 +7,17 @@ import "./FilmDetail.Module.css";
 import imdb_image from "../../assets/imdb.png";
 import notImage from "../../assets/not-image.webp";
 import { TiTick } from "react-icons/ti";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
+import { db } from "../../firebase/config";
+import { useDispatch, useSelector } from "react-redux";
+import { myList } from "../../redux/watchSlice";
+import alertify from "alertifyjs";
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const CharacterDetail = () => {
@@ -86,6 +97,9 @@ const FilmDetail = () => {
   const [video, setVideo] = useState();
   const videoEl = useRef(null);
   const [selected, setSelected] = useState("");
+  const user = useSelector((state) => state.watch.user);
+  const mylist = useSelector((state) => state.watch.myList);
+  const dispatch = useDispatch();
   const attemptPlay = () => {
     videoEl &&
       videoEl.current &&
@@ -93,7 +107,21 @@ const FilmDetail = () => {
         console.error("Error attempting to play", error);
       });
   };
-
+  useEffect(() => {
+    const ref = collection(db, "myList");
+    const q = query(ref, where("email", "==", user ? user?.email : null));
+    const unsub = onSnapshot(q, (snap) => {
+      dispatch(
+        myList(
+          snap.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+        )
+      );
+    });
+    return unsub;
+  }, [dispatch, user]);
   useEffect(() => {
     attemptPlay();
   }, []);
@@ -113,6 +141,27 @@ const FilmDetail = () => {
       )
       .then((data) => setVideo(data.data));
   }, [id]);
+
+  const handleAddList = async (e) => {
+    e.preventDefault();
+
+    const doc = {
+      id: id,
+      filmdId: detail.id,
+      poster_path: detail.poster_path,
+    };
+    const ref = collection(db, "myList");
+    try {
+      await addDoc(ref, {
+        ...doc,
+        email: user.email,
+      });
+      alertify.success("Liste'ye eklendi. İzlemeyi unutma. :)");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="container film-container">
@@ -166,10 +215,17 @@ const FilmDetail = () => {
                   <div className="film-detail-title-left">
                     {detail.original_title}
                   </div>
-                  <div className="film-detail-title-right tooltip">
-                    <TiTick />
-                    <div className="tooltiptext">Liste'ye ekle</div>
-                  </div>
+                  {mylist
+                    .map((list) => list.filmdId)
+                    .filter((list) => list === detail.id).length === 0 && (
+                    <div
+                      className="film-detail-title-right tooltip"
+                      onClick={handleAddList}
+                    >
+                      <TiTick />
+                      <div className="tooltiptext">Liste'ye ekle</div>
+                    </div>
+                  )}
                 </div>
                 <div className="film-detail-description">{detail.overview}</div>
                 <div className="film-detail-menu">

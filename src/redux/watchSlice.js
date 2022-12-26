@@ -4,6 +4,7 @@ const initialState = {
   page: 1,
   login: [],
   user: null,
+  myList: [],
 };
 
 export const counterSlice = createSlice({
@@ -22,9 +23,12 @@ export const counterSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
+    myList: (state, action) => {
+      state.myList = action.payload;
+    },
   },
 });
 
-export const { pageUp, pageDown, login, logout } = counterSlice.actions;
+export const { pageUp, pageDown, login, logout, myList } = counterSlice.actions;
 
 export default counterSlice.reducer;
