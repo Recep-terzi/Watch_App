@@ -43,10 +43,13 @@
   align-items: center;
   justify-content: center;
 }
-.footer-link-menu ul li {
+.footer-link-menu ul li a {
   font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
-.footer-link-menu ul li:hover {
+.footer-link-menu ul li a:hover {
   color: red;
   transition: 0.4s ease-in-out;
 }
@@ -63,6 +66,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
 }
 .footer-social-media .instgram:hover,
 .footer-social-media .linkedin:hover {

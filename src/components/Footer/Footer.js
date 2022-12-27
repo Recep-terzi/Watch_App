@@ -3,6 +3,7 @@ import "./Footer.Module.css";
 import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import { GiFilmProjector } from "react-icons/gi";
 import popcorn from "../../assets/popcorn.svg";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
@@ -29,11 +30,21 @@ const Footer = () => {
             </div>
             <div className="footer-link-menu">
               <ul>
-                <li>Diziler</li>
-                <li>Filmler</li>
-                <li>Çocuk</li>
-                <li>İletişim</li>
-                <li>Üye ol</li>
+                <li>
+                  <Link to="/alltv">Diziler</Link>
+                </li>
+                <li>
+                  <Link to="/allfilms">Filmler</Link>
+                </li>
+                <li>
+                  <Link to="/">İletişim</Link>
+                </li>
+                <li>
+                  <Link to="/login">Giriş Yap</Link>
+                </li>
+                <li>
+                  <Link to="/register">Üye ol</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-social-media">
