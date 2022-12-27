@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import "./AllFilms.Module.css";
 import "./AllFilms";
@@ -11,12 +11,16 @@ import { Fade } from "react-awesome-reveal";
 import { pageDown, pageUp } from "../../redux/watchSlice";
 import Loading from "../Loading/Loading";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { RxDropdownMenu } from "react-icons/rx";
 const AllFilms = () => {
   const [films, setFilms] = useState();
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState();
   const [filteredDetail, setFilteredDetail] = useState("");
   const [search, setSearch] = useState("");
+  const [categoryClass, setCategoryClass] = useState(true);
+  const activeCategories = useRef(null);
+  const categories = useRef(null);
   const pageUpButton = () => {
     dispatch(pageUp());
   };
@@ -52,6 +56,26 @@ const AllFilms = () => {
       )
       .then((data) => setFilms(data.data));
   }, [search]);
+
+  // useEffect(() => {
+  //   var el = document.getElementById("getCategories");
+  //   console.log(el);
+  //   if (el) {
+  //     el.addEventListener("click", () => {
+  //       document.getElementById("categories").classList.add("active");
+  //     });
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    const el = activeCategories.current;
+    if (el) {
+      el.addEventListener("click", () => {
+        setCategoryClass(!categoryClass);
+      });
+    }
+  });
+
   return (
     <>
       {loading && <Loading />}
@@ -62,7 +86,12 @@ const AllFilms = () => {
 
             <div className="films-body">
               <div className="films-left">
-                <p>Kategoriler</p>
+                <p>
+                  Kategoriler{" "}
+                  <div ref={activeCategories}>
+                    <RxDropdownMenu id="getCategories" />
+                  </div>
+                </p>
                 <ul className="search-ul">
                   <li>
                     <input
@@ -73,7 +102,11 @@ const AllFilms = () => {
                     />
                   </li>
                 </ul>
-                <ul>
+                <ul
+                  id="categories"
+                  ref={categories}
+                  className={categoryClass ? "" : "active"}
+                >
                   <li onClick={() => filteredFilms("12")}>
                     <AiOutlineArrowRight />
                     Macera

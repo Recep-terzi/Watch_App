@@ -11,6 +11,9 @@
   font-weight: bold;
   margin-bottom: 30px;
 }
+.films-body .films-left p svg {
+  display: none;
+}
 .films-body .films-left ul {
   display: flex;
   flex-direction: column;
@@ -71,4 +74,38 @@
   background-color: red;
   color: #fff;
   transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .films-body {
+    display: block;
+  }
+  .films-body .films-right {
+    display: grid;
+    grid-template-columns: none;
+    padding: 30px;
+  }
+  .films-body .films-right .films-card .films-card-image img {
+    width: 100%;
+    height: 100%;
+  }
+  .films-button button {
+    padding: 5px 100px 5px 100px;
+  }
+  .films-body .films-left p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .films-body .films-left p:first-child svg {
+    display: block;
+  }
+  .films-body .films-left ul {
+    display: none;
+  }
+}
+.films-body .films-left .active {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
 }
