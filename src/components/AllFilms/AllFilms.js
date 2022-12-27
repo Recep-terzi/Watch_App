@@ -11,7 +11,7 @@ import { Fade } from "react-awesome-reveal";
 import { pageDown, pageUp } from "../../redux/watchSlice";
 import Loading from "../Loading/Loading";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { RxDropdownMenu } from "react-icons/rx";
+import { VscTriangleDown } from "react-icons/vsc";
 const AllFilms = () => {
   const [films, setFilms] = useState();
   const [loading, setLoading] = useState(true);
@@ -82,14 +82,14 @@ const AllFilms = () => {
       {!loading && (
         <>
           <div className="container">
-            <Navbar id="top" />
+            <Navbar />
 
             <div className="films-body">
               <div className="films-left">
                 <p>
-                  Kategoriler{" "}
+                  Kategoriler
                   <div ref={activeCategories}>
-                    <RxDropdownMenu id="getCategories" />
+                    <VscTriangleDown id="getCategories" />
                   </div>
                 </p>
                 <ul className="search-ul">

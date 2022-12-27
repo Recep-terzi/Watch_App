@@ -15,8 +15,7 @@ body {
   margin-top: 20px;
 }
 /* Video */
-.video {
-}
+
 video {
   position: absolute;
   top: 0;
@@ -30,12 +29,16 @@ video {
 /* Main */
 
 .main-section {
-  margin-top: 1100px;
+  margin-top: 1000px;
   margin-bottom: 100px;
 }
 
 @media screen and (max-width: 768px) {
+  .main-section {
+    margin: 0;
+  }
   .video {
     display: none;
+    margin: 0;
   }
 }
