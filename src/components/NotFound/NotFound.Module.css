@@ -1,0 +1,24 @@
+.notfound-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 700px;
+  height: 600px;
+}
+.notfound-container img {
+  margin-bottom: 30px;
+}
+.notfound-container p {
+  text-align: center;
+  font-size: 25px;
+}
+.notfound-container p a {
+  color: red;
+  text-decoration: none;
+}
+.notfound-container p a:hover {
+  text-decoration: underline;
+}
