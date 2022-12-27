@@ -100,3 +100,38 @@
   width: 120px;
   height: 120px;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px;
+  }
+  .footer-item {
+    display: block;
+  }
+  .absolute-icon,
+  .absolute-icon2 {
+    display: none;
+  }
+  .footer-detail {
+    display: block;
+  }
+  .footer-link-menu ul {
+    display: block;
+  }
+  .footer-link-menu ul li {
+    margin-bottom: 10px;
+  }
+  .footer-detail .footer-logo {
+    margin-bottom: 30px;
+  }
+  .footer-detail .footer-description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .footer-social-media {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+}
