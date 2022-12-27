@@ -135,4 +135,7 @@
     padding: 30px;
     top: 30px;
   }
+  .register-info {
+    line-height: 1.5;
+  }
 }
