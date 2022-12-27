@@ -132,8 +132,9 @@
   .register-container {
     position: relative;
     width: 100%;
-    padding: 30px;
-    top: 30px;
+    height: 100%;
+    padding-bottom: 27px;
+    border-radius: 0;
   }
   .register-info {
     line-height: 1.5;
