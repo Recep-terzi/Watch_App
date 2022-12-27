@@ -127,3 +127,12 @@
 .register-info a {
   color: red;
 }
+
+@media screen and (max-width: 768px) {
+  .register-container {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    top: 30px;
+  }
+}
