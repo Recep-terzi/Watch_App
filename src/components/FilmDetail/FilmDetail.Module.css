@@ -10,6 +10,7 @@
   color: #fff;
   padding: 30px;
   gap: 36px;
+  margin-bottom: 100px;
 }
 .film-detail .film-detail-left {
   flex: 1;
@@ -168,6 +169,7 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
+  margin-bottom: 100px;
 }
 .character-detail-card .card-body {
   width: 200px;
@@ -200,6 +202,8 @@
 /* Reviews Detail */
 .reviews-detail {
   color: #fff;
+  margin-bottom: 100px;
+  margin-top: 100px;
 }
 .reviews-detail-body {
   display: flex;
@@ -222,4 +226,8 @@
 }
 .reviews-detail-body .review-right .create-review {
   margin-top: 20px;
+}
+.not-reviews {
+  font-size: 40px;
+  text-align: center;
 }

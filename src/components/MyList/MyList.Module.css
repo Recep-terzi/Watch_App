@@ -22,3 +22,18 @@
   width: 226.98px;
   height: 342.47px;
 }
+
+.mylist > .mylist-body svg {
+  position: absolute;
+  font-size: 30px;
+  margin-left: 197px;
+  color: red;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+.mylist > .mylist-body svg:hover {
+  background-color: red;
+  color: #fff;
+  transition: 0.3s ease;
+}

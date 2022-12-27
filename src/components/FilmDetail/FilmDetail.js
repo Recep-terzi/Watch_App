@@ -18,6 +18,7 @@ import { db } from "../../firebase/config";
 import { useDispatch, useSelector } from "react-redux";
 import { myList } from "../../redux/watchSlice";
 import alertify from "alertifyjs";
+import Footer from "../Footer/Footer";
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const CharacterDetail = () => {
@@ -61,7 +62,6 @@ const CharacterDetail = () => {
 const CommentDetail = () => {
   const [reviews, setReviews] = useState();
   const { id } = useParams();
-
   useEffect(() => {
     axios
       .get(
@@ -70,7 +70,7 @@ const CommentDetail = () => {
       )
       .then((data) => setReviews(data.data));
   }, [id]);
-
+  console.log(reviews);
   return (
     <>
       {reviews && (
@@ -86,6 +86,12 @@ const CommentDetail = () => {
               </div>
             </div>
           ))}
+          {reviews.total_results === 0 && (
+            <p className="not-reviews">
+              {" "}
+              Bu film hakkında yorum bulunmamaktadır.{" "}
+            </p>
+          )}
         </div>
       )}
     </>
@@ -291,6 +297,7 @@ const FilmDetail = () => {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 };
