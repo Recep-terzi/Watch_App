@@ -124,4 +124,7 @@
   .login-info {
     line-height: 1.5;
   }
+  .login-form .login-password svg {
+    right: 75px;
+  }
 }
