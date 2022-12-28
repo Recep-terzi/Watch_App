@@ -270,8 +270,20 @@
   iframe {
     height: 300px;
   }
+  .reviews-detail {
+    margin: 0;
+  }
   .reviews-detail-body {
     display: flex;
     flex-direction: column;
+    padding: 30px 0 30px 0;
+  }
+  .reviews-detail .reviews-detail-body .review-right .review-content {
+    font-size: 15px;
+    text-align: center;
+  }
+  .reviews-detail .reviews-detail-body .review-right .create-review {
+    text-align: center;
+    font-size: 15px;
   }
 }
