@@ -262,7 +262,9 @@
     align-items: center;
     justify-content: center;
   }
-
+  .tooltiptext {
+    display: none;
+  }
   iframe {
     height: 300px;
   }
