@@ -39,19 +39,22 @@
   .mobile-nav-wrapper {
     display: flex;
     flex-direction: column;
+    flex: 3;
   }
   .hamburger-menu-wrapper {
     display: flex;
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 100%;
     z-index: 1;
-    transition: left 300ms ease;
+    transition: left 250ms ease;
   }
   .open {
     left: 0;
+    display: flex;
   }
   .mobile-navbar-menu {
     display: flex;
@@ -69,7 +72,6 @@
   }
   .mobile-nav-wrapper {
     background-color: #fff;
-
     flex: 3;
   }
   .overlay {
