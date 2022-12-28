@@ -5,8 +5,9 @@ import { logout } from "../../redux/watchSlice";
 import "./Navbar.Module.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GrClose } from "react-icons/gr";
+import { GiHamburgerMenu, GiFilmProjector } from "react-icons/gi";
+import { GrClose, GrLogout } from "react-icons/gr";
+import { ImList, ImFilm } from "react-icons/im";
 const Navbar = () => {
   const user = useSelector((state) => state.watch.user);
   const dispatch = useDispatch();
@@ -92,10 +93,20 @@ const Navbar = () => {
             <div className="nav-item">
               {user ? (
                 <>
-                  <Link to="/mylist">Listem</Link>
-                  <Link to="/alltv">Diziler</Link>
-                  <Link to="/allfilms">Filmler</Link>
-                  <Link to="/" onClick={logoutUser}>
+                  <Link to="/mylist">
+                    <ImList />
+                    Listem
+                  </Link>
+                  <Link to="/alltv">
+                    <GiFilmProjector />
+                    Diziler
+                  </Link>
+                  <Link to="/allfilms">
+                    <ImFilm />
+                    Filmler
+                  </Link>
+                  <Link to="/" onClick={logoutUser} className="logout">
+                    <GrLogout />
                     Çıkış Yap
                   </Link>
                   <Link to="/"></Link>
