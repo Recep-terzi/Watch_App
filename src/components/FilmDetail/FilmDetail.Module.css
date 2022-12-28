@@ -231,3 +231,29 @@
   font-size: 40px;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .film-detail {
+    display: block;
+  }
+  .film-detail-right {
+    margin-top: 30px;
+  }
+  .select-film-detail ul {
+    gap: 10px;
+  }
+  .select-film-detail ul li {
+    font-size: 17px;
+  }
+  .character-detail-card {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .character-detail-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .character-detail-card .card-body .card-image img {
+    width: 100%;
+  }
+}

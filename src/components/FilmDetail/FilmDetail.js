@@ -171,7 +171,6 @@ const FilmDetail = () => {
   return (
     <>
       <div className="container film-container">
-        <Navbar />
         {video && (
           <>
             {video.results.length === 0 ? (
