@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import Iframe from "react-iframe";
 import { useParams } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
 import "./FilmDetail.Module.css";
 import imdb_image from "../../assets/imdb.png";
 import notImage from "../../assets/not-image.webp";
