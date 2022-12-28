@@ -28,4 +28,8 @@
     width: 150px;
     height: 200px;
   }
+  .film-section-title {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
 }
