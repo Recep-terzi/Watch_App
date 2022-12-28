@@ -37,3 +37,18 @@
   color: #fff;
   transition: 0.3s ease;
 }
+
+@media screen and (max-width: 768px) {
+  .mylist > .mylist-body {
+    grid-template-columns: auto auto;
+  }
+  .mylist > .mylist-body img {
+    width: 100%;
+    height: 100%;
+  }
+  .mylist > .mylist-body svg {
+    margin-left: 0;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+  }
+}
