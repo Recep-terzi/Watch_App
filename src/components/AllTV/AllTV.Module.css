@@ -72,3 +72,43 @@
   color: #fff;
   transition: 0.3s ease-in-out;
 }
+@media screen and (max-width: 768px) {
+  .tv-body {
+    display: block;
+  }
+  .tv-body .tv-right {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 30px;
+  }
+  .tv-body .tv-right .tv-card .tv-card-image img {
+    width: 100%;
+    height: 205.78px;
+  }
+  .tv-button button {
+    padding: 5px 100px 5px 100px;
+  }
+  .tv-body .tv-left p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tv-body .tv-left p:first-child svg {
+    display: block;
+  }
+  .tv-body .tv-left ul {
+    display: none;
+  }
+  .tv-button {
+    display: block;
+  }
+  .tv-button button:last-child {
+    margin-top: 0;
+  }
+}
+.tv-body .tv-left .active {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+}

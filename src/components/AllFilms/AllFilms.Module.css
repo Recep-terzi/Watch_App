@@ -81,7 +81,7 @@
   }
   .films-body .films-right {
     display: grid;
-    grid-template-columns: none;
+    grid-template-columns: auto auto;
     padding: 30px;
   }
   .films-body .films-right .films-card .films-card-image img {
@@ -101,6 +101,12 @@
   }
   .films-body .films-left ul {
     display: none;
+  }
+  .films-button {
+    display: block;
+  }
+  .films-button button:last-child {
+    margin-top: 0;
   }
 }
 .films-body .films-left .active {

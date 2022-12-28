@@ -56,7 +56,7 @@ const ComedySection = () => {
                       max: 1024,
                       min: 464,
                     },
-                    items: 1,
+                    items: 2,
                     partialVisibilityGutter: 30,
                   },
                   mobile: {
@@ -64,7 +64,7 @@ const ComedySection = () => {
                       max: 464,
                       min: 0,
                     },
-                    items: 1,
+                    items: 2,
                     partialVisibilityGutter: 20,
                   },
                 }}

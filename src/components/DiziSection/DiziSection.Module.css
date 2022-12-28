@@ -23,3 +23,9 @@
   height: 350px;
   border-radius: 10px;
 }
+@media screen and (max-width: 768px) {
+  .dizi-carousel img {
+    width: 150px;
+    height: 200px;
+  }
+}

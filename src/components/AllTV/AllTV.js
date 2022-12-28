@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import "./AllTV.Module.css";
 import "./AllTV";
@@ -11,12 +11,18 @@ import { Fade } from "react-awesome-reveal";
 import { pageDown, pageUp } from "../../redux/watchSlice";
 import Loading from "../Loading/Loading";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { VscTriangleDown } from "react-icons/vsc";
 const AllTV = () => {
   const [tv, setTv] = useState();
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState();
   const [filteredDetail, setFilteredDetail] = useState("");
   const [search, setSearch] = useState("");
+
+  const [categoryClass, setCategoryClass] = useState(true);
+  const activeCategories2 = useRef(null);
+
+  const categories2 = useRef(null);
   const pageUpButton = () => {
     dispatch(pageUp());
   };
@@ -53,6 +59,14 @@ const AllTV = () => {
       )
       .then((data) => setTv(data.data));
   }, [search]);
+  useEffect(() => {
+    const el = activeCategories2.current;
+    if (el) {
+      el.addEventListener("click", () => {
+        setCategoryClass(!categoryClass);
+      });
+    }
+  });
   return (
     <>
       {loading && <Loading />}
@@ -63,7 +77,12 @@ const AllTV = () => {
 
             <div className="tv-body">
               <div className="tv-left">
-                <p>Kategoriler</p>
+                <p>
+                  Kategoriler
+                  <div ref={activeCategories2}>
+                    <VscTriangleDown id="getCategories2" />
+                  </div>
+                </p>
                 <ul className="search-ul">
                   <li>
                     <input
@@ -74,7 +93,11 @@ const AllTV = () => {
                     />
                   </li>
                 </ul>
-                <ul>
+                <ul
+                  id="categories2"
+                  ref={categories2}
+                  className={categoryClass ? "" : "active"}
+                >
                   <li onClick={() => filteredFilms("10759")}>
                     <AiOutlineArrowRight />
                     Aksiyon & Macera
