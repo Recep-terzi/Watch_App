@@ -28,7 +28,12 @@
   font-size: 14px;
   text-align: center;
 }
-
+.mobile-navbar-menu {
+  display: none;
+}
+.hamburger-menu-wrapper {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .desktop-nav {
     display: none;
