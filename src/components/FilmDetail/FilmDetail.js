@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { myList } from "../../redux/watchSlice";
 import alertify from "alertifyjs";
 import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const CharacterDetail = () => {
@@ -169,6 +170,7 @@ const FilmDetail = () => {
 
   return (
     <>
+      <Navbar />
       <div className="container film-container">
         {video && (
           <>
