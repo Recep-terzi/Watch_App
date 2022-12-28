@@ -43,7 +43,6 @@
   }
   .hamburger-menu-wrapper {
     display: flex;
-    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -51,10 +50,10 @@
     left: 100%;
     z-index: 1;
     transition: left 250ms ease;
+    overflow: hidden;
   }
   .open {
     left: 0;
-    display: flex;
   }
   .mobile-navbar-menu {
     display: flex;
