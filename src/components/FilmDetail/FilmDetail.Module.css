@@ -247,11 +247,13 @@
   .character-detail-card {
     display: grid;
     grid-template-columns: auto auto;
+    gap: 30px;
   }
   .character-detail-card .card-body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   .character-detail-card .card-body .card-image img {
     width: 100%;
