@@ -92,18 +92,19 @@ const Navbar = () => {
             <div className="nav-item">
               {user ? (
                 <>
+                  <Link to="/mylist">Listem</Link>
+                  <Link to="/alltv">Diziler</Link>
+                  <Link to="/allfilms">Filmler</Link>
                   <Link to="/" onClick={logoutUser}>
                     Çıkış Yap
                   </Link>
-                  <Link to="/mylist">Listem</Link>
                   <Link to="/"></Link>
                 </>
               ) : (
                 <>
                   <Link to="/login">Giriş</Link>
                   <Link to="/register">Kayıt ol</Link>
-                  <Link to="/alltv">Diziler</Link>
-                  <Link to="/allfilms">Filmler</Link>
+
                   <Link to="/"></Link>
                 </>
               )}
