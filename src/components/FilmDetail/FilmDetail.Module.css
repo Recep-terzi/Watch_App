@@ -270,4 +270,8 @@
   iframe {
     height: 300px;
   }
+  .reviews-detail-body {
+    display: flex;
+    flex-direction: column;
+  }
 }
