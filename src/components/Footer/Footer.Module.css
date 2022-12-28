@@ -61,6 +61,10 @@
   flex-direction: column;
   gap: 20px;
 }
+.footer-social-media a {
+  text-decoration: none;
+  color: #fff;
+}
 .footer-social-media .instgram,
 .footer-social-media .linkedin {
   display: flex;

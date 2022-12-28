@@ -48,14 +48,24 @@ const Footer = () => {
               </ul>
             </div>
             <div className="footer-social-media">
-              <div className="instgram">
+              <a
+                className="instgram"
+                href="https://www.instagram.com/recepterziiii/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <AiFillInstagram />
                 <p>İnstgram</p>
-              </div>
-              <div className="linkedin">
+              </a>
+              <a
+                className="linkedin"
+                href="https://www.linkedin.com/in/recepterzi/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <AiFillLinkedin />
                 <p>Linkedin</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>
