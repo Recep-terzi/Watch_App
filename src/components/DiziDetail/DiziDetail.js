@@ -42,8 +42,8 @@ const DiziDetail = () => {
   }, [id]);
   return (
     <>
+      <Navbar />
       <div className="container dizi-container">
-        <Navbar />
         {video && (
           <>
             {video.results.length === 0 ? (
